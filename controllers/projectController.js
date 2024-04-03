@@ -2,12 +2,18 @@ const {Project} = require('../models/models')
 
 class projectController {
     async create(req, res) {
-        const {title, description} = req.body
-        const project = await Project.create({title, description})
+        const {title, description, userId} = req.body
+        const project = await Project.create({title, description, userId})
         return res.json({})
     }
+
     async get(req, res) {
-        const project = req.query
+        const {id} = req.params
+        const project = await Project.findOne(
+            {
+                where: {id}
+            },
+        )
         return res.json(project)
     }
 
