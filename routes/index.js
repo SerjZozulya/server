@@ -5,7 +5,7 @@ const taskRouter = require('./taskRouter')
 const userRouter = require('./userRouter')
 
 router.use('/projects', projectRouter)
-router.use('/task', taskRouter)
+router.use('/tasks', taskRouter)
 router.use('/user', userRouter)
 
 module.exports = router
