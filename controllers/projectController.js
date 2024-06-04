@@ -4,7 +4,7 @@ class projectController {
   async create(req, res) {
     const { title, description, userId } = req.body;
     const project = await Project.create({ title, description, userId });
-    return res.json({});
+    return res.json(project);
   }
 
   async get(req, res) {
